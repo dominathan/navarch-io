@@ -73,9 +73,9 @@
           <button
             id="navAction"
             class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-            data-tf-popup="UuGQN0vb" data-tf-iframe-props="title=Navarch - Schedule demo" data-tf-medium="snippet"
+            data-modal-toggle="exampleModal" 
           >
-            Demo
+           View Demo
           </button>
         </div>
       </div>
@@ -95,9 +95,10 @@
           </p>
           <button 
             class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-            data-tf-popup="UuGQN0vb" data-tf-iframe-props="title=Navarch - Schedule demo" data-tf-medium="snippet"
+            data-modal-toggle="exampleModal"
+            id="view-demo"
           >
-            Demo
+            View Demo
           </button>
         </div>
         <!--Right Col-->
@@ -513,7 +514,7 @@
           <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
         </div>
         <div class="flex flex-col sm:flex-row justify-center pt-12 my-12 sm:my-4">
-          <!-- <div class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
+          <div class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
             <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
               <div class="p-8 text-3xl font-bold text-center border-b-4">
                 Free
@@ -537,7 +538,7 @@
                 </button>
               </div>
             </div>
-          </div> -->
+          </div>
           <div class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
             <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
               <div class="p-8 text-3xl font-bold text-center border-b-4">
@@ -545,6 +546,7 @@
               </div>
               <ul class="w-full text-center text-sm">
                 <!-- <li class="border-b py-4">Everything from free plus</li> -->
+                <li class="border-b py-4">Everything from free plus</li>
                 <li class="border-b py-4">OpenAPI / Swagger Specification for up to 5 service</li>
                 <li class="border-b py-4">Customer setup support</li>
                 <li class="border-b py-4">24 hour response time</li>
@@ -658,7 +660,7 @@
         class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
         data-tf-popup="UuGQN0vb" data-tf-iframe-props="title=Navarch - Schedule demo" data-tf-medium="snippet"
       >
-        Request Demo!
+        Request Full Demo!
       </button>
     </section>
     <!--Footer-->
@@ -816,5 +818,44 @@
         return false;
       }
     </script>
+
+
+    <!-- Modal -->
+    <div class="fixed hidden inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
+      id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div
+        class="relative top-20 mx-auto p-5 border w-5/6 shadow-lg rounded-md bg-white content-center"
+      >
+        <div style="position: relative; padding-bottom: 66.66666666666666%; height: 0;">
+          <iframe
+            src="https://www.loom.com/embed/b029c41cacf64d76b1363f8ba588fd3f" frameborder="0" webkitallowfullscreen
+            mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        </div>
+      </div>
+    </div>
+    <script>
+      let modal = document.getElementById('exampleModal')
+      let demoBtn = document.getElementById('navAction')
+      let otherDemoBtn = document.getElementById('view-demo')
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+      demoBtn.onclick = function() {
+        modal.style.display = 'block'
+      }
+      otherDemoBtn.onclick = function() {
+        modal.style.display = 'block'
+      }
+
+    </script>
+
+
+    <!-- END-MODAL -->
+
+    
   </body>
 </html>
+
